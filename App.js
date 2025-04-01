@@ -12,7 +12,7 @@ const App = () => {
   const [inputEnabled, inputEnabledSet] = useState(false);
 
   // const para tempo acumulado
-  const [accumulatedTime, setAccumulatedTime] = useState(0);
+  const [tempoAcumulado, tempoAcumuladoSet] = useState(0);
 
   // const cronometro ativo
   const [cronometro, cronometroSet] = useState(false);
@@ -72,9 +72,9 @@ const App = () => {
   };
 
   // Função que adiciona o tempo ao cronômetro
-  const addTimeToTimer  = (timeInMinutes) => {
+  const addTimeToTimer  = (tempoMinuto) => {
     // Converte minutos para segundos e soma ao tempo acumulado
-    setAccumulatedTime(prevTime => prevTime + timeInMinutes * 60);
+    tempoAcumuladoSet(prevTime => prevTime + tempoMinuto * 60);
     if (!isTimerRunning) {
       startTimer(); // Inicia o cronômetro se não estiver rodando
     }
